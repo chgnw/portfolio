@@ -1,5 +1,5 @@
-import hsImg from '../img/dummyimg.png'
-import uniImg from '../img/dummyimg.png'
+import hsImg from '../img/hsImg.png'
+import uniImg from '../img/uniImg.png'
 
 const educationList = [
     {title: 'Kristen Yusuf Highschool', period: '2019 - 2022', image: hsImg},

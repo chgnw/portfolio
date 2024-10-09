@@ -1,10 +1,10 @@
-import profileImg from '../img/dummyprofile.png'
+import profileImg from '../img/profilepic.png'
 
 const Hero = () => {
     return (
         <section id="hero" className='p-8 md:p-12 flex flex-col md:flex-row justify-center items-center space-y-6 md:space-x-12'>
             <div className='flex-shrink-0'>
-                <img src={profileImg} alt="" className='w-44 h-44 rounded-full border-2 border-acc-l dark:border-acc-d' />
+                <img src={profileImg} alt="" className='w-48 h-52 rounded-full border-2 border-acc-l dark:border-acc-d' />
             </div>
 
             <div className='text-center md:text-left max-w-5xl'>

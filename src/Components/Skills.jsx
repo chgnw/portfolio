@@ -11,7 +11,7 @@ const skillsList = [
     {image: htmlImg, level: 'Advanced', percentage: 85},
     {image: tailwindImg, level: 'Intermediate', percentage: 75},
     {image: reactImg, level: 'Intermediate', percentage: 70},
-    {image: javaImg, level: 'Intermediate', percentage: 70},
+    {image: javaImg, level: 'Beginner', percentage: 60},
 ];
 
 const Skills = () => {
