@@ -1,7 +1,6 @@
-// components/sections/Contacts.tsx
 "use client";
 import { useState, useRef } from "react";
-import emailjs from '@emailjs/browser'; // Import library
+import emailjs from '@emailjs/browser';
 import { FiLinkedin, FiGithub, FiInstagram } from 'react-icons/fi';
 import { portfolioData } from "@/data/portfolioData";
 
@@ -39,11 +38,11 @@ export const Contacts = () => {
             case 'sending': 
                 return `${baseClasses} bg-gray-500 border-gray-400 text-foreground cursor-not-allowed`;
             case 'success': 
-                return `${baseClasses} bg-green-500 border-green-500 text-green-300`;
+                return `${baseClasses} bg-green-500 border-green-500 text-green-300 hover:bg-green-500`;
             case 'error': 
-                return `${baseClasses} bg-red-500 border-red-500 text-red-300`;
+                return `${baseClasses} bg-red-500 border-red-500 text-red-300 hover:bg-red-500`;
             default: 
-                return `${baseClasses} border border-primary text-white `;
+                return `${baseClasses} border border-foreground/40 text-white hover:bg-foreground/40 cursor-pointer`;
         }
     };
     
@@ -59,7 +58,6 @@ export const Contacts = () => {
                 </div>
                 <textarea name="message" placeholder="Message" rows={5} required className="w-full p-3 rounded-lg bg-white/20 dark:bg-black/20 border border-transparent focus:border-primary focus:ring-primary outline-none transition"></textarea>
                 
-                {/* Tombol dengan warna solid dan status dinamis */}
                 <button type="submit" disabled={status === 'sending'} className={getButtonClasses()}>
                     {status === 'sending' ? 'Sending...' : status === 'success' ? 'Sent!' : status === 'error' ? 'Failed, please try again!' : 'Send Message'}
                 </button>
