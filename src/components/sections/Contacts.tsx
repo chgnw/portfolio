@@ -33,7 +33,7 @@ export const Contacts = () => {
     
     // Fungsi untuk mendapatkan teks tombol berdasarkan status
     const getButtonClasses = () => {
-        let baseClasses = "w-full py-3 text-lg font-semibold rounded-md transition-all duration-300";
+        const baseClasses = "w-full py-3 text-lg font-semibold rounded-md transition-all duration-300";
         switch (status) {
             case 'sending': 
                 return `${baseClasses} bg-gray-500 border-gray-400 text-foreground cursor-not-allowed`;

@@ -9,7 +9,7 @@ import { Projects } from "@/components/sections/Projects";
 import { Skills } from "@/components/sections/Skills";
 import { Contacts } from "@/components/sections/Contacts";
 
-const sectionComponents: { [key: string]: React.ComponentType<any> } = {
+const sectionComponents: Record<string, React.ComponentType<{ setActiveSection: (section: string) => void }>> = {
   home: Home,
   about: About,
   projects: Projects,
@@ -40,7 +40,7 @@ export default function PortfolioPage() {
             animate="visible"
             exit="exit"
             variants={variants}
-            transition={{ type: "easeInOut", duration: 0.5 }}
+            transition={{ ease: "easeInOut", duration: 0.5 }}
             className="w-full"
           >
             <ActiveComponent setActiveSection={setActiveSection} />

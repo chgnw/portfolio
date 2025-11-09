@@ -18,7 +18,7 @@ export const portfolioData = {
   jobTitle: "Application Developer",
   shortDescription: "A passionate full-stack developer focused on building efficient web applications with Node.js, Express, Next.js, and MySQL. I enjoy writing clean, maintainable code and creating scalable, user-friendly systems that deliver real value.",
   about: {
-    description: "I’m a Full Stack Developer specializing in building web applications using Node.js, Express, Next.js, and MySQL. I’m passionate about writing clean, maintainable code and designing systems that balance performance, scalability, and usability. With hands-on experience in both backend development and modern frontend frameworks, I focus on turning requirements into reliable, user-friendly solutions that deliver measurable value to businesses.",
+    description: "I'm a Full Stack Developer specializing in building web applications using Node.js, Express, Next.js, and MySQL. I’m passionate about writing clean, maintainable code and designing systems that balance performance, scalability, and usability. With hands-on experience in both backend development and modern frontend frameworks, I focus on turning requirements into reliable, user-friendly solutions that deliver measurable value to businesses.",
     education: [
       {
         degree: "Bachelor of Computer Science",
@@ -74,10 +74,10 @@ export const portfolioData = {
     { name: "TailwindCSS", icon: "/icons/tailwind.png" },
     { name: "Express.js", icon: "/icons/express.png" },
     { name: "Next.js", icon: "/icons/nextjs.png" },
-    { name: "MySQL", icon: "/icons/mysql.png" },
+    { name: "MySQL", icon: "/icons/mysql.png", certificatePath: "/certs/sql-cert.png" },
     { name: "RESTful API", icon: "/icons/restapi.png" },
     { name: "C", icon: "/icons/c.png" },
-    { name: "Java", icon: "/icons/java.png" },
+    { name: "Java", icon: "/icons/java.png", certificatePath: "/certs/java-cert.png" },
     { name: "Python", icon: "/icons/python.png" },
     { name: "Docker", icon: "/icons/docker.png" },
     { name: "Git", icon: "/icons/git.png" },

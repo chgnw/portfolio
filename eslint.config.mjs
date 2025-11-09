@@ -19,6 +19,10 @@ const eslintConfig = [
       "build/**",
       "next-env.d.ts",
     ],
+    rules: {
+      // Matiin error petik/apostrof
+      "react/no-unescaped-entities": "off",
+    },
   },
 ];
 
