@@ -29,8 +29,8 @@ export const Home = ({ setActiveSection }: HomeProps) => {
         </button>
         
         <a
-          href="#" 
-          onClick={() => alert('CV coming soon!')}
+          href="/cv-app-dev.pdf" 
+          download="cv-app-dev.pdf" 
           className="relative flex items-center justify-center gap-2 px-8 py-4 text-lg rounded-full font-semibold
                      glass-effect bg-card/70 text-foreground shadow-lg 
                      transition-transform duration-300 hover:scale-102 border border-white/20
