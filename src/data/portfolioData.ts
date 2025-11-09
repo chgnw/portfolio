@@ -16,30 +16,30 @@ export interface Skill {
 export const portfolioData = {
   name: "Christopher Gunawan",
   jobTitle: "Application Developer",
-  shortDescription: "A passionate Full Stack Developer with a strong focus on building scalable, high-performance web applications. I turn complex ideas into seamless digital experiences that drive real results.",
+  shortDescription: "A passionate full-stack developer focused on building efficient web applications with Node.js, Express, Next.js, and MySQL. I enjoy writing clean, maintainable code and creating scalable, user-friendly systems that deliver real value.",
   about: {
-    description: "I’m a Full Stack Developer specializing in building end-to-end web applications using Node.js, Express, Next.js, and MySQL. I’m passionate about writing clean, maintainable code and designing systems that balance performance, scalability, and usability. With hands-on experience in both backend development and modern frontend frameworks, I focus on turning complex requirements into reliable, user-friendly solutions that deliver measurable value to businesses.",
+    description: "I’m a Full Stack Developer specializing in building web applications using Node.js, Express, Next.js, and MySQL. I’m passionate about writing clean, maintainable code and designing systems that balance performance, scalability, and usability. With hands-on experience in both backend development and modern frontend frameworks, I focus on turning requirements into reliable, user-friendly solutions that deliver measurable value to businesses.",
     education: [
       {
         degree: "Bachelor of Computer Science",
         university: "Bina Nusantara University",
-        year: "2022 - 2026",
-        image: "/image.png"
+        year: "2022 - Present (Expected Jan. 2026)",
+        image: "/edu/binus.png"
       },
       {
         degree: "Ilmu Pengetahuan Alam (IPA)",
         university: "SMA Kristen Yusuf",
         year: "2020 - 2022",
-        image: "/image.png"
+        image: "/edu/sma.png"
       }
     ],
     experience: [
       {
         role: "Application Developer",
         company: "PT Hartono Istana Teknologi (Polytron)",
-        period: "2025 - Now",
+        period: "2025 - Present",
         status: "Intern",
-        image: "/image.png"
+        image: "/exp/polytron.png"
       }
     ]
   },
@@ -48,38 +48,40 @@ export const portfolioData = {
     {
       title: "Personal Porfolio",
       description: "A personal portfolio website that allows me to showcase my projects and skills.",
-      images: ['/image.png', '/image2.png'],
-      techStack: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
-      githubUrl: "https://github.com/username/portfolio-nextjs",
+      images: ['/proj/portfolio/portfolio-1.png', '/proj/portfolio/portfolio-2.png', '/proj/portfolio/portfolio-3.png'],
+      techStack: ["Next.js", "Tailwind CSS", "Framer Motion", "Emailjs"],
+      githubUrl: "https://github.com/chgnw/portfolio",
     },
     {
-      title: "Personal Porfolio",
-      description: "A personal portfolio website that allows me to showcase my projects and skills.",
-      images: ['/image.png', '/image2.png'],
-      techStack: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
-      githubUrl: "https://github.com/username/portfolio-nextjs",
+      title: "Money Tracker",
+      description: "A simple money tracker web-app to track daily expenses.",
+      images: ['/proj/money-tracker/money-tracker-1.png', '/proj/money-tracker/money-tracker-2.png'],
+      techStack: ["React.js", "Tailwind CSS", "MongoDB"],
+      githubUrl: "https://github.com/chgnw/MoneyTracker",
     },
     {
-      title: "Personal Porfolio",
-      description: "A personal portfolio website that allows me to showcase my projects and skills.",
-      images: ['/image.png', '/image2.png'],
-      techStack: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
-      githubUrl: "https://github.com/username/portfolio-nextjs",
-    },
-    {
-      title: "Personal Porfolio",
-      description: "A personal portfolio website that allows me to showcase my projects and skills.",
-      images: ['/image.png', '/image2.png'],
-      techStack: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
-      githubUrl: "https://github.com/username/portfolio-nextjs",
+      title: "Learnticle",
+      description: "A web collection of education articles to help students find related articles easily.",
+      images: ['/proj/learnticle/learnticle-1.png', '/proj/learnticle/learnticle-2.png', '/proj/learnticle/learnticle-3.png', '/proj/learnticle/learnticle-4.png'],
+      techStack: ["Laravel 11", "Tailwind CSS", "Breeze", "MySQL"],
+      githubUrl: "https://github.com/chgnw/FinalProjectWebProg",
     },
   ] as Project[],
   
+  // Tambah object certificatePath: "/certs/" kalau ada certificate
   skills: [
-    { name: "TypeScript", icon: "/image.png", certificatePath: "/certs/typescript-cert.png" },
-    { name: "Next.js", icon: "/image.png" },
-    { name: "Tailwind CSS", icon: "/image.png", certificatePath: "/certs/path-salah.png" },
-    { name: "Framer Motion", icon: "/image.png" },
+    { name: "HTML", icon: "/icons/html.png" },
+    { name: "TailwindCSS", icon: "/icons/tailwind.png" },
+    { name: "Express.js", icon: "/icons/express.png" },
+    { name: "Next.js", icon: "/icons/nextjs.png" },
+    { name: "MySQL", icon: "/icons/mysql.png" },
+    { name: "RESTful API", icon: "/icons/restapi.png" },
+    { name: "C", icon: "/icons/c.png" },
+    { name: "Java", icon: "/icons/java.png" },
+    { name: "Python", icon: "/icons/python.png" },
+    { name: "Docker", icon: "/icons/docker.png" },
+    { name: "Git", icon: "/icons/git.png" },
+    { name: "Postman", icon: "/icons/postman.png" },
   ] as Skill[],
   
   contacts: {

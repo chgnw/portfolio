@@ -2,26 +2,6 @@ import { portfolioData } from "@/data/portfolioData";
 import Image from 'next/image';
 
 export const About = () => {
-  const calculateDuration = (period: string): string | null => {
-    const parts = period.split(' - ');
-    if (parts.length !== 2) return null;
-
-    const startYear = parseInt(parts[0]);
-    
-    if (parts[1].toLowerCase().trim() === 'now') {
-      return null;
-    }
-
-    const endYear = parseInt(parts[1]);
-
-    if (isNaN(startYear) || isNaN(endYear)) return null;
-
-    const duration = endYear - startYear;
-    if (duration <= 0) return null; 
-
-    return `(${duration} year${duration > 1 ? 's' : ''})`;
-  };
-
   return (
     <div className="max-w-5xl mx-auto p-4 text-center">
       <h2 className="text-4xl md:text-5xl font-bold mb-4">About Me</h2>
@@ -42,11 +22,6 @@ export const About = () => {
                 <p className="text-md text-foreground/90">{edu.degree}</p>
                 <p className="text-sm text-foreground/70">
                   {edu.year}
-                  {calculateDuration(edu.year) && (
-                    <span className="text-xs text-foreground/60 ml-2">
-                      {calculateDuration(edu.year)}
-                    </span>
-                  )}
                 </p>
               </div>
             </div>
@@ -65,11 +40,6 @@ export const About = () => {
                 <p className="text-md text-foreground/90">{exp.role} - <span className="italic">{exp.status}</span></p>
                 <p className="text-sm text-foreground/70">
                   {exp.period}
-                  {calculateDuration(exp.period) && (
-                    <span className="text-xs text-foreground/60 ml-2">
-                      {calculateDuration(exp.period)}
-                    </span>
-                  )}
                 </p>
               </div>
             </div>
