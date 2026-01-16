@@ -2,12 +2,18 @@
 
 /* === Tema Utama (Dark Navy) === */
 :root {
-  --background-start-rgb: 17, 24, 39;   /* Dark Navy */
-  --background-end-rgb: 55, 48, 163;    /* Deep Indigo */
-  --foreground: #E5E7EB;                /* Light Gray */
-  --primary: #60A5FA;                   /* Lighter Blue */
-  --card: rgba(31, 41, 55, 0.5);        /* Semi-transparent Gray */
-  --accent: #93C5FD;                    /* Pale Blue */
+  --background-start-rgb: 17, 24, 39;
+  /* Dark Navy */
+  --background-end-rgb: 55, 48, 163;
+  /* Deep Indigo */
+  --foreground: #E5E7EB;
+  /* Light Gray */
+  --primary: #60A5FA;
+  /* Lighter Blue */
+  --card: rgba(31, 41, 55, 0.5);
+  /* Semi-transparent Gray */
+  --accent: #93C5FD;
+  /* Pale Blue */
 }
 
 @theme inline {
@@ -16,19 +22,43 @@
 }
 
 @keyframes gradient-animation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.star-twinkle {
+  animation: twinkle ease-in-out infinite;
 }
 
 body {
   color: var(--foreground);
-  background: linear-gradient(
-    -45deg,
-    rgb(var(--background-start-rgb)),
-    rgb(var(--background-end-rgb)),
-    rgb(var(--background-start-rgb))
-  );
+  background: linear-gradient(-45deg,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb)),
+      rgb(var(--background-start-rgb)));
   background-size: 400% 400%;
   animation: gradient-animation 15s ease infinite;
 }
@@ -40,31 +70,63 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.bg-foreground{
-  background-color: var(--foreground);}
-.text-foreground{
-  color: var(--foreground);}
-.border-foreground{
+.bg-foreground {
+  background-color: var(--foreground);
+}
+
+.text-foreground {
+  color: var(--foreground);
+}
+
+.border-foreground {
   border-color: var(--foreground);
 }
 
-.bg-primary{
-  background-color: var(--primary);}
-.text-primary{
-  color: var(--primary);}
-.border-primary{
-  border-color: var(--primary);}
+.bg-primary {
+  background-color: var(--primary);
+}
 
-.bg-background{
-  background-color: rgb(var(--background-start-rgb));}
-.text-background{
-  color: rgb(var(--background-start-rgb));}
-.border-background{
-  border-color: rgb(var(--background-start-rgb));}
+.text-primary {
+  color: var(--primary);
+}
 
-.text-accent{
-  color: var(--accent);}
-.bg-accent{
-  background-color: var(--accent);}
-.border-accent{
-  border-color: var(--accent);}
+.border-primary {
+  border-color: var(--primary);
+}
+
+.bg-background {
+  background-color: rgb(var(--background-start-rgb));
+}
+
+.text-background {
+  color: rgb(var(--background-start-rgb));
+}
+
+.border-background {
+  border-color: rgb(var(--background-start-rgb));
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+.border-accent {
+  border-color: var(--accent);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}

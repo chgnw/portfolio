@@ -10,15 +10,15 @@ export const Contacts = () => {
 
     const sendEmail = (e: React.FormEvent) => {
         e.preventDefault();
-        
+
         if (!form.current) return;
         setStatus('sending');
 
         emailjs.sendForm(
-            process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-            process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+            process.env.EMAILJS_SERVICE_ID!,
+            process.env.EMAILJS_TEMPLATE_ID!,
             form.current,
-            process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+            process.env.EMAILJS_PUBLIC_KEY!
         ).then((result) => {
             console.log(result.text);
             setStatus('success');
@@ -30,22 +30,22 @@ export const Contacts = () => {
             setTimeout(() => setStatus('idle'), 3000);
         });
     };
-    
+
     // Fungsi untuk mendapatkan teks tombol berdasarkan status
     const getButtonClasses = () => {
         const baseClasses = "w-full py-3 text-lg font-semibold rounded-md transition-all duration-300";
         switch (status) {
-            case 'sending': 
+            case 'sending':
                 return `${baseClasses} bg-gray-500 border-gray-400 text-foreground cursor-not-allowed`;
-            case 'success': 
+            case 'success':
                 return `${baseClasses} bg-green-500 border-green-500 text-green-300 hover:bg-green-500`;
-            case 'error': 
+            case 'error':
                 return `${baseClasses} bg-red-500 border-red-500 text-red-300 hover:bg-red-500`;
-            default: 
+            default:
                 return `${baseClasses} border border-foreground/40 text-white hover:bg-foreground/40 cursor-pointer`;
         }
     };
-    
+
     return (
         <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Contact Me</h2>
@@ -53,11 +53,11 @@ export const Contacts = () => {
 
             <form ref={form} onSubmit={sendEmail} className="w-full p-8 space-y-6 rounded-xl glass-effect">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <input type="text" name="name" placeholder="Name" required className="w-full p-3 rounded-lg bg-white/20 dark:bg-black/20 border border-transparent focus:border-primary focus:ring-primary outline-none transition"/>
-                    <input type="email" name="email" placeholder="Email" required className="w-full p-3 rounded-lg bg-white/20 dark:bg-black/20 border border-transparent focus:border-primary focus:ring-primary outline-none transition"/>
+                    <input type="text" name="name" placeholder="Name" required className="w-full p-3 rounded-lg bg-white/20 dark:bg-black/20 border border-transparent focus:border-primary focus:ring-primary outline-none transition" />
+                    <input type="email" name="email" placeholder="Email" required className="w-full p-3 rounded-lg bg-white/20 dark:bg-black/20 border border-transparent focus:border-primary focus:ring-primary outline-none transition" />
                 </div>
                 <textarea name="message" placeholder="Message" rows={5} required className="w-full p-3 rounded-lg bg-white/20 dark:bg-black/20 border border-transparent focus:border-primary focus:ring-primary outline-none transition"></textarea>
-                
+
                 <button type="submit" disabled={status === 'sending'} className={getButtonClasses()}>
                     {status === 'sending' ? 'Sending...' : status === 'success' ? 'Sent!' : status === 'error' ? 'Failed, please try again!' : 'Send Message'}
                 </button>
