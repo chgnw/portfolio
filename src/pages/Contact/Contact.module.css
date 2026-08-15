@@ -1,0 +1,153 @@
+.section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: var(--space-section) var(--space-xl);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  color: var(--text-primary);
+  text-align: center;
+  margin: 0;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  text-align: center;
+  margin: var(--space-sm) 0 var(--space-3xl);
+}
+
+.formWrapper {
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.hp {
+  display: none;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.input,
+.textarea {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  width: 100%;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--accent-dim);
+}
+
+.inputError {
+  border-color: rgba(201, 168, 118, 0.4);
+}
+
+.textarea {
+  height: 100px;
+  resize: none;
+}
+
+.error {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent-dim);
+  margin: 0;
+}
+
+.cooldown {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent-dim);
+  text-align: center;
+  margin: 0 0 12px;
+}
+
+.success {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--status-current-text);
+  text-align: center;
+  margin: 0 0 12px;
+}
+
+.errorMsg {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent-dim);
+  text-align: center;
+  margin: 0 0 12px;
+}
+
+.submitBtn {
+  width: 100%;
+  display: block;
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.socialRow {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.socialCircle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--glass-fill);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.socialCircle:hover {
+  border-color: var(--accent-dim);
+  color: var(--accent);
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}

@@ -1,0 +1,26 @@
+.badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--status-current-text);
+  background: var(--status-current-bg);
+  border: 1px solid var(--status-current-border);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--status-current-text);
+  box-shadow: 0 0 6px rgba(74, 222, 128, 0.6);
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}

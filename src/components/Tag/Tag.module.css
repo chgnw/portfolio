@@ -1,0 +1,10 @@
+.tag {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--accent);
+  background: rgba(201, 168, 118, 0.08);
+  border: 1px solid rgba(201, 168, 118, 0.15);
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  display: inline-block;
+}

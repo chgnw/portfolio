@@ -1,0 +1,205 @@
+.section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: var(--space-section) var(--space-xl);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  color: var(--text-primary);
+  text-align: center;
+  margin: 0 0 var(--space-xl);
+}
+
+.bio {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  color: var(--text-secondary);
+  max-width: 640px;
+  margin: 0 auto var(--space-3xl);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cardHeading {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--text-primary);
+  margin: 0 0 20px;
+}
+
+.eduEntry {
+  margin-bottom: 16px;
+}
+
+.eduEntry:last-child {
+  margin-bottom: 0;
+}
+
+.institution {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.degree {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin: 2px 0 0;
+}
+
+.note {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin: 4px 0 0;
+}
+
+.expItem {
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.expItem:last-child {
+  border-bottom: none;
+}
+
+.expHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 16px 0;
+  cursor: pointer;
+  text-align: left;
+  color: inherit;
+  gap: 16px;
+}
+
+.expHeaderLeft {
+  flex: 1;
+  min-width: 0;
+}
+
+.expCompany {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.expRole {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin: 2px 0;
+}
+
+.expDate {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin: 0 0 8px;
+}
+
+.expHook {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.expToggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.expToggleText {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent-dim);
+}
+
+.expToggle:hover .expToggleText {
+  color: var(--accent);
+}
+
+.chevron {
+  font-size: 12px;
+  color: var(--accent-dim);
+  transition: transform 0.35s ease;
+  display: inline-block;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.expBody {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+}
+
+.expBodyOpen {
+  max-height: 300px;
+  opacity: 1;
+}
+
+.contribList {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+.contribItem {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text-secondary);
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.contribItem::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent-dim);
+}
+
+.contribItem:last-child {
+  margin-bottom: 0;
+}

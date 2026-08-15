@@ -1,0 +1,20 @@
+.card {
+  background: var(--glass-fill);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  padding: var(--space-xl);
+  transition: border-color 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--glass-border-hover);
+}
+
+.noPadding {
+  padding: 0;
+}
