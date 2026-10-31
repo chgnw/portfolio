@@ -1,52 +1,45 @@
-"use client";
+import type { Metadata } from "next";
+import { PortfolioView } from "@/components/portfolio/PortfolioView";
+import { getPublishedDocument } from "@/lib/content/queries";
+import { collectIconKeys, resolvePortfolio } from "@/lib/content/view";
+import { renderIcons } from "@/lib/icons/server";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Navbar } from "@/components/Navbar";
-import { Home } from "@/components/sections/Home";
-import { About } from "@/components/sections/About";
-import { Projects } from "@/components/sections/Projects";
-import { Skills } from "@/components/sections/Skills";
-import { Contacts } from "@/components/sections/Contacts";
+/**
+ * Production site. Statically rendered from the latest *published* snapshot
+ * and regenerated on demand when the owner publishes — visitors get plain
+ * pre-built HTML with all content inlined, so there is nothing to load.
+ */
+export const dynamic = "force-static";
+export const revalidate = false;
 
-const sectionComponents: Record<string, React.ComponentType<{ setActiveSection: (section: string) => void }>> = {
-  home: Home,
-  about: About,
-  projects: Projects,
-  skills: Skills,
-  contacts: Contacts,
-};
+async function getView() {
+  const published = await getPublishedDocument().catch((err) => {
+    console.error("Failed to load published content", err);
+    return null;
+  });
+  return published ? resolvePortfolio(published.doc) : null;
+}
 
-export default function PortfolioPage() {
-  const [activeSection, setActiveSection] = useState("home");
-  const ActiveComponent = sectionComponents[activeSection];
-
-  const variants = {
-    hidden: { opacity: 0, y: 30, scale: 0.98 },
-    visible: { opacity: 1, y: 0, scale: 1 },
-    exit: { opacity: 0, y: -30, scale: 0.98 },
+export async function generateMetadata(): Promise<Metadata> {
+  const view = await getView();
+  return {
+    title: view?.texts.global.metaTitle ?? "Portfolio",
+    description: view?.texts.global.metaDescription,
   };
-  
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-4 pt-28 md:pt-24 overflow-hidden">
-      <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
-      
-      {/* Wrapper untuk konten */}
-      <div className="w-full max-w-5xl flex-grow flex items-center justify-center">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeSection}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            variants={variants}
-            transition={{ ease: "easeInOut", duration: 0.5 }}
-            className="w-full"
-          >
-            <ActiveComponent setActiveSection={setActiveSection} />
-          </motion.div>
-        </AnimatePresence>
-      </div>
-    </main>
-  );
+}
+
+export default async function PortfolioPage() {
+  const view = await getView();
+  if (!view) {
+    return (
+      <main className="portfolio-bg flex items-center justify-center p-8 text-center">
+        <div>
+          <h1 className="text-3xl font-bold mb-2">Portfolio coming soon</h1>
+          <p className="text-foreground/70">Nothing has been published yet.</p>
+        </div>
+      </main>
+    );
+  }
+  const icons = await renderIcons(collectIconKeys(view));
+  return <PortfolioView view={view} icons={icons} enableDashboardShortcut />;
 }

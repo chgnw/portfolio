@@ -55,6 +55,11 @@
 
 body {
   color: var(--foreground);
+  background: rgb(var(--background-start-rgb));
+}
+
+.portfolio-bg {
+  min-height: 100vh;
   background: linear-gradient(-45deg,
       rgb(var(--background-start-rgb)),
       rgb(var(--background-end-rgb)),

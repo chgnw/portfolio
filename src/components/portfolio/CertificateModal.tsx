@@ -1,8 +1,6 @@
-// components/CertificateModal.tsx
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import { FiX } from "react-icons/fi";
 
 interface CertificateModalProps {
@@ -12,11 +10,9 @@ interface CertificateModalProps {
 }
 
 export const CertificateModal = ({ isOpen, onClose, imageSrc }: CertificateModalProps) => {
-  if (!imageSrc) return null;
-
   return (
     <AnimatePresence>
-      {isOpen && (
+      {isOpen && imageSrc && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -32,24 +28,16 @@ export const CertificateModal = ({ isOpen, onClose, imageSrc }: CertificateModal
             onClick={(e) => e.stopPropagation()}
             className="relative w-full max-w-4xl h-auto max-h-[90vh] p-4 rounded-xl shadow-2xl glass-effect border-none"
           >
-            {/* Tombol Close */}
             <button
               onClick={onClose}
+              aria-label="Close"
               className="absolute -top-3 -right-3 z-10 w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full hover:scale-110 transition-transform"
             >
               <FiX size={20} />
             </button>
-            
-            {/* Konten Gambar */}
             <div className="relative w-full h-full max-h-[85vh] overflow-auto">
-               <Image
-                src={imageSrc}
-                alt="Certificate"
-                layout="responsive"
-                width={16}
-                height={9}
-                objectFit="contain"
-              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={imageSrc} alt="Certificate" className="w-full h-auto object-contain" />
             </div>
           </motion.div>
         </motion.div>
